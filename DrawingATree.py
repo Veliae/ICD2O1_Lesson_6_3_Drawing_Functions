@@ -10,7 +10,7 @@ HEIGHT = 500
 SIZE = (WIDTH, HEIGHT)
 
 screen = pygame.display.set_mode(SIZE)
-pygame.display.set_caption("My game")
+pygame.display.set_caption("Tree")
 # ---------------------------
 
 # Used to manage how fast the screen updates
@@ -18,8 +18,17 @@ clock = pygame.time.Clock()
 
 # ---------------------------
 # Initialize global variables
+# Colors
+brown = (82, 29, 0)
+dark_green = (15, 82, 0)
 
 # ---------------------------
+
+# ---------------------------
+# Functions
+
+# ---------------------------
+
 
 # --------------- Main program loop ---------------
 running = True
@@ -34,6 +43,15 @@ while running:
 
     # ----- DRAWING -----
     screen.fill((255, 255, 255))  # always the first drawing command
+
+    # Draw a Tree
+    # Trunk
+    pygame.draw.rect(screen, brown, [325, 300, 50, 100])
+
+    # Pines (top to bottom)
+    pygame.draw.polygon(screen, dark_green, [[350, 120], [300, 200], [400, 200]])
+    pygame.draw.polygon(screen, dark_green, [[350, 160], [280, 260], [420, 260]])
+    pygame.draw.polygon(screen, dark_green, [[350, 200], [260, 320], [440, 320]])
 
     # Must be the last two lines of the game loop
     pygame.display.flip()
