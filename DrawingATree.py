@@ -19,6 +19,7 @@ clock = pygame.time.Clock()
 # ---------------------------
 # Initialize global variables
 # Colors
+white = (255, 255, 255)
 brown = (82, 29, 0)
 dark_green = (15, 82, 0)
 
@@ -42,7 +43,7 @@ while running:
     # All game math and comparisons happen here
 
     # ----- DRAWING -----
-    screen.fill((255, 255, 255))  # always the first drawing command
+    screen.fill(white)  # always the first drawing command
 
     # Draw a Tree
     # Trunk
