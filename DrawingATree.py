@@ -20,14 +20,29 @@ clock = pygame.time.Clock()
 # Initialize global variables
 # Colors
 white = (255, 255, 255)
-brown = (82, 29, 0)
-dark_green = (15, 82, 0)
+brown = (51, 26, 0)
+pale_pink = (255, 204, 204)
 
 # ---------------------------
 
 # ---------------------------
 # Functions
+## Draw a tree
+def draw_tree(x, y):
+	'''
+	This function draws a tree.
 
+	Args:
+		x (int): x-position for the tip of the tree
+		y (int): y-position for the tip of the tree
+	'''
+	# Trunk
+	pygame.draw.rect(screen, brown, [x-25, y+180, 50, 100])
+
+	# Pines (top to bottom)
+	pygame.draw.polygon(screen, pale_pink, [[x, y], [x-50, y+80], [x+50, y+80]])
+	pygame.draw.polygon(screen, pale_pink, [[x, y+40], [x-70, y+140], [x+70, y+140]])
+	pygame.draw.polygon(screen, pale_pink, [[x, y+80], [x-90, y+200], [x+90, y+200]])
 # ---------------------------
 
 
@@ -45,14 +60,8 @@ while running:
     # ----- DRAWING -----
     screen.fill(white)  # always the first drawing command
 
-    # Draw a Tree
-    # Trunk
-    pygame.draw.rect(screen, brown, [325, 300, 50, 100])
-
-    # Pines (top to bottom)
-    pygame.draw.polygon(screen, dark_green, [[350, 120], [300, 200], [400, 200]])
-    pygame.draw.polygon(screen, dark_green, [[350, 160], [280, 260], [420, 260]])
-    pygame.draw.polygon(screen, dark_green, [[350, 200], [260, 320], [440, 320]])
+    #Draw a Tree
+    draw_tree(340, 150)
 
     # Must be the last two lines of the game loop
     pygame.display.flip()
